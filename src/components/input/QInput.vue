@@ -68,6 +68,7 @@
       :readonly="readonly"
       :maxlength="maxLength"
       v-bind="attributes"
+      v-mask="mask"
 
       :min="min"
       :max="max"
@@ -120,6 +121,10 @@ import { between } from '../../utils/format'
 import { QInputFrame } from '../input-frame'
 import { QResizeObservable } from '../observables'
 import { QSpinner } from '../spinner'
+import Vue from 'vue'
+import VueMask from 'v-mask'
+
+Vue.use(VueMask)
 
 export default {
   name: 'q-input',
@@ -148,7 +153,12 @@ export default {
       type: Number,
       default: 1
     },
-    maxDecimals: Number
+    maxDecimals: Number,
+
+    mask: {
+      type: String,
+      default: ''
+    }
   },
   data () {
     return {

@@ -133,6 +133,14 @@
 
       <q-input v-model="area" type="textarea" float-label="Textarea" :max-height="100" :min-rows="3" />
 
+      <br><br>
+
+      <q-input
+        v-model="textWithMask"
+        :mask="'XXX XXX XXX'"
+        float-label="Input with mask"
+      />
+
       <div class="fixed" style="bottom: 16px; right: 16px;">
         <q-checkbox v-model="error" label="Error" />
       </div>
@@ -149,7 +157,8 @@ export default {
       area: '',
       focus: false,
       error: false,
-      loading: false
+      loading: false,
+      textWithMask: ''
     }
   },
   computed: {
